@@ -1,0 +1,134 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set up full-screen layout */
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ff7f50, #ff6347, #ff4500, #ffba77, #ffd700);
+    animation: backgroundAnimation 10s ease infinite;
+    color: white;
+    overflow: hidden;
+}
+
+/* Main container styling */
+.container {
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Main message styling */
+#message {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background-image: linear-gradient(to right, #ff6347, #ffd700, #ff4500, #ffba77);
+    background-clip: text;
+    color: transparent;
+    animation: textAnimation 2s ease-out infinite, bounceIn 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+/* Countdown Timer Styling */
+#countdown {
+    font-size: 2.5em;
+    font-weight: 300;
+    margin-top: 20px;
+    color: #fff;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeIn 3s 2s forwards; /* Delayed fade-in */
+}
+
+/* Keyframe for message fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Keyframe for message bounce-in */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Keyframe for colorful text animation */
+@keyframes textAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Keyframe for background gradient animation */
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(45deg, #ff7f50, #ff6347, #ff4500, #ffba77, #ffd700);
+    }
+    50% {
+        background: linear-gradient(45deg, #8e44ad, #3498db, #f39c12, #1abc9c, #e74c3c);
+    }
+    100% {
+        background: linear-gradient(45deg, #ff7f50, #ff6347, #ff4500, #ffba77, #ffd700);
+    }
+}
+
+/* Countdown Animation */
+@keyframes countdownAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Make the page responsive */
+@media (max-width: 768px) {
+    #message {
+        font-size: 3em;
+    }
+    #countdown {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    #message {
+        font-size: 2.5em;
+    }
+    #countdown {
+        font-size: 1.8em;
+    }
+}
